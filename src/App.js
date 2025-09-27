@@ -6,11 +6,14 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Navbar from './components/Navbar'
 import Support from './components/Support'
+import {useState} from "react";
 
 function App() {
+    const [darkMode, setDarkMode] = useState(false);
+
     return (
-        <>
-            <Navbar />
+        <div className={darkMode ? 'dark' : ''}>
+            <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
             <Home />
             <About />
             <Support />
@@ -18,7 +21,7 @@ function App() {
             <Feedback />
             <Contact />
             <Footer />
-        </>
+        </div>
     );
 }
 
